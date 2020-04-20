@@ -1,0 +1,12 @@
+agm-map {
+    height: 300px;
+}
+#tablewd{
+    height: 350px;
+    overflow-y: scroll;
+}
+.table .thead-dark th{
+    position:sticky;
+    top:-2px;
+    z-index: 1000;
+}

@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center my-3">
+        <div class="col-lg-6">
+            <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center TableContent my-2">
+        <h3>Da click en algún registro para cambiar la ubicación.</h3>
+        <div class="col-lg-10" id="tablewd">
+            <table class="table table-hover " >
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">USUARIO</th>
+                        <th scope="col">LATITUD</th>
+                        <th scope="col">LONGITUD</th>
+                        <th scope="col">FECHA</th>
+                        <th scope="col">CREADO</th>
+                        <th scope="col">ACTUALIZADO</th>
+                    </tr>
+                </thead>
+                <tbody class="mt-1">
+                    <tr *ngFor="let element of items" (click)="changeLocation(element)">
+                        <td>{{element.id}}</td>
+                        <td>{{element.usuarioid}}</td>
+                        <td>{{element.latitud}}</td>
+                        <td>{{element.longitud}}</td>
+                        <td>{{element.fecha}}</td>
+                        <td>{{element.createdAt}}</td>
+                        <td>{{element.updatedAt}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
